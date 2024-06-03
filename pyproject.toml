@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "myhelper"
 version = "0.1.0-alpha"
-description = "Code Snippets that I regularly use."
+description = "Code Snippets that I regularly use_."
 readme = "README.md"
 readme-content-type = "text/markdown"
 requires-python = ">=3.6"
@@ -15,8 +15,7 @@ authors = [
 ]
 maintainers = [
     { name = "Prince Kumar", email = "prince736804545@gmail.com" }
-]
-[project]
+] 
 classifiers = [
     "Development Status :: 1 - Planning",
     "Intended Audience :: Developers",
