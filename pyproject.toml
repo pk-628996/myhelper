@@ -47,7 +47,7 @@ dev = [
 "Documentation" = "https://github.com/pk-628996/myhelper/wiki"
 "Issue Tracker" = "https://github.com/pk-628996/myhelper/issues"
 "Source Code" = "https://github.com/pk-628996/myhelper"
-Changelog = "https://github.com/pk-628996/pk-628996/blob/master/CHANGELOG.md
+Changelog = "https://github.com/pk-628996/pk-628996/blob/master/CHANGELOG.md"
 
 [tool.setuptools.scripts]
 myhelper = "myhelper.cli:main"
