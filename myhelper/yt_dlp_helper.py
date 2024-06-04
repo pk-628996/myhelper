@@ -2,7 +2,10 @@
 This snippets helps to use yt_dlp in script i.e., in embedding yt-dlp
 """
 
-__all__ = ['Ytube']
+__all__ = [
+    'Ytube',
+    'Ytlist'
+]
 __author__ = "Prince Kumar"
 __version__ = "0.1.0-alpha"
 
