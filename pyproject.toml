@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 name = "myhelper"
-version = "0.1.5-alpha"
+version = "0.1.6-alpha"
 description = "Code Snippets that I regularly use."
 long_description = "README.md"
 license = "UNLICENSE"
