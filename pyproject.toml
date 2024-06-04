@@ -5,10 +5,6 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "myhelper"
 version = "0.1.6-alpha"
-
-[tool.setuptools]
-name = "myhelper"
-version = "0.1.6-alpha"
 description = "Code Snippets that I regularly use."
 long_description = "README.md"
 license = "UNLICENSE"
@@ -47,11 +43,3 @@ homepage = "https://github.com/pk-628996/myhelper"
 documentation = "https://github.com/pk-628996/myhelper/wiki"
 repository = "https://github.com/pk-628996/myhelper"
 changelog = "https://github.com/pk-628996/myhelper/blob/master/CHANGELOG.md"
-
-[tool.setuptools.metadata]
-authors = [
-    { name = "Prince Kumar", email = "prince736804545@gmail.com" }
-]
-maintainers = [
-    { name = "Prince Kumar", email = "prince736804545@gmail.com" }
-]
