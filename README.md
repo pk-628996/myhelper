@@ -30,9 +30,11 @@ pdftk().merge( input_files=['file1.pdf','file1.pdf'],output='/your path/your pdf
 # **To Burst Pdf:**
 pdftk().burst_pdf('file1.pdf',output_folder='pk',input_pw='passwordofyourpdf')
 
-# ** To Remove Password:** pdftk().decrypt('file1.pdf',input_pw='yourpass',output='pk.pdf')
+# ** To Remove Password:**
+pdftk().decrypt('file1.pdf',input_pw='yourpass',output='pk.pdf')
 
-# ** To encrypt Pdf:** pdftk().encrypt('file1.pdf',user_pw='pass',owner_pw='pass1',output='output.pdf')
+# ** To encrypt Pdf:**
+pdftk().encrypt('file1.pdf',user_pw='pass',owner_pw='pass1',output='output.pdf')
 
 ```
 ---
