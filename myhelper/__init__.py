@@ -15,6 +15,6 @@ from .yt_dlp_helper import *
 from .cli import *
 """
 __author__ = "Prince Kumar"
-__version__ = "0.1.5-alpha"
+__version__ = "0.1.7-alpha"
 
 from .cli import main
