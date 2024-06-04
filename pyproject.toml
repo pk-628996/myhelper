@@ -4,6 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "myhelper"
+version = "0.1.6-alpha"
+
 [tool.setuptools]
 name = "myhelper"
 version = "0.1.6-alpha"
@@ -45,7 +47,6 @@ homepage = "https://github.com/pk-628996/myhelper"
 documentation = "https://github.com/pk-628996/myhelper/wiki"
 repository = "https://github.com/pk-628996/myhelper"
 changelog = "https://github.com/pk-628996/myhelper/blob/master/CHANGELOG.md"
-"Issue Tracker" = "https://github.com/pk-628996/myhelper/issues"
 
 [tool.setuptools.metadata]
 authors = [
