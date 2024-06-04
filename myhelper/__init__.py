@@ -2,7 +2,7 @@
 
 __all__ = [
     "Ytube",
-    "pdftk,
+    "pdftk",
     "generate_random_string",
     "hbs",
     "make_filename_safe",
