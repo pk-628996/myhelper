@@ -16,7 +16,7 @@ maintainers = [
     { name = "Prince Kumar", email = "prince736804545@gmail.com" }
 ] 
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.6",
@@ -47,6 +47,7 @@ dev = [
 "Documentation" = "https://github.com/pk-628996/myhelper/wiki"
 "Issue Tracker" = "https://github.com/pk-628996/myhelper/issues"
 "Source Code" = "https://github.com/pk-628996/myhelper"
+Changelog = "https://github.com/pk-628996/myhelper/blob/master/CHANGELOG.md
 
 [project.scripts]
 myhelper = "myhelper.cli:main"
