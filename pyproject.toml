@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "myhelper"
-version = "0.1.5-alpha"
+version = "0.1.6-alpha"
 description = "Code Snippets that I regularly use."
 readme = "README.md"
 requires-python = ">=3.6"
@@ -51,3 +51,5 @@ Changelog = "https://github.com/pk-628996/pk-628996/blob/master/CHANGELOG.md"
 
 [project.scripts]
 myhelper = "myhelper.cli:main"
+
+
