@@ -2,9 +2,9 @@
 Code Snippets that I regularly use.
 
 ```python
-from myhelper.yt_dlp_helper import Ytube
+from myhelper.yt_dlp_helper import Ytube,Ytlist
 
-url="Your YouTube Url"
+url="Your YouTube Video Url"
 
 yt=Ytube(url)
 
@@ -18,6 +18,17 @@ video=yt.download_by_resolution("144p")
 audio=yt.download_audio_by_bt_rate(128)
 audio=yt.download_audio_by_bt_rate("128kbps")
 audio=yt.download_audio_by_bt_rate("128k")
+
+yt_=Ytlist("Your Playlist Url")
+lst=yt_.download_all_videos_by_resolution('720p',out_fol="Out_Folder",alt="360p")
+
+lst["output_folder"]
+lst["files_list"]
+lst["size_downloaded"]
+lst["downloaded"]
+lst["failed"]
+lst["total"]
+
 ```
 
 
