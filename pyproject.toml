@@ -2,6 +2,8 @@
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "myhelper"
 [tool.setuptools]
 name = "myhelper"
 version = "0.1.6-alpha"
