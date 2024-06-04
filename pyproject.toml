@@ -49,8 +49,5 @@ dev = [
 "Source Code" = "https://github.com/pk-628996/myhelper"
 Changelog = "https://github.com/pk-628996/pk-628996/blob/master/CHANGELOG.md"
 
-[tool.setuptools.scripts]
+[project.scripts]
 myhelper = "myhelper.cli:main"
-
-[tool.setuptools.packages.find]
-where = ["myhelper"]
