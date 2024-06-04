@@ -304,7 +304,7 @@ class Ytube:
             opts['outtmpl']=f'{output_folder}/%(title)s_[%(id)s].%(ext)s'
         with YoutubeDL(opts) as ydl:
             ydl.download(self.url)
-        return self.stream_files.get('_file')
+        return abspath(self.stream_files.get('_file'))
 
     def _find_suitable_aud(self,video_stream):
         if len(self.audios)!=0:
@@ -367,7 +367,7 @@ class YtlistVid:
         self.playlist_title=info.get('playlist_title')
 
     def __repr__(self):
-        return f'<-YtlistVid:{title[45:]}__{self.channel}->'
+        return f'<-YtlistVid:{self.title[45:]}__{self.channel}->'
 
 
 class Ytlist:
@@ -388,6 +388,10 @@ class Ytlist:
         self.channel=None 
         self.channel_url=None 
         self.channel_id=None
+        self.downloaded_bytes = 0 
+        self.downloaded_files = [] 
+        self.downloaded = 0
+        self.failed = 0 
         self.pk_opts = {
             'skip_download':True,
             'extract_flat':True
@@ -418,36 +422,31 @@ class Ytlist:
         """download all videos by resolution returns a dict containing files_list, dirrctory, no of successful and failed downloads 
         pass alt='some resolution' to download alternate resolution for videos which does not have requested resolution 
         do this to reduce no. of failed downloads"""
-        downloaded_bytes=0
-        if not (self.id or self.webpage_url):
-            self.extract_info()
         if not out_fol:
             out_fol=self.title
             out_fol=make_filename_safe(out_fol)
             makedirs(out_fol,exist_ok=True)
-        files=[]
-        downloaded,failed=0,0
         for urls in self.urls_of_all_videos:
             file=Ytube(urls).download_by_resolution(res=res,out_fol=out_fol)
             if file:
                 print('Downloaded ✓',file)
-                downloaded+=1
-                downloaded_bytes+=getsize(file)
-                files.append(file)
+                self.downloaded_files.append(file)
+                self.downloaded += 1
+                self.downloaded_bytes += getsize(file)
             else: 
                 if alt: 
                     file=Ytube(urls).download_by_resolution(res=alt,out_fol=out_fol)
                     if file:
                         print('Downloaded ✓',file)
-                        downloaded+=1
-                        downloaded_bytes+=getsize(file)
-                        files.append(file)
+                        self.downloaded_files.append(file)
+                        self.downloaded += 1
+                        self.downloaded_bytes += getsize(file)
                     else:
-                        failed+=1
+                        self.failed+=1
                 else: 
-                    failed+=1
-        print(f'Downloaded {downloaded} videos of {self.playlist_count}.\nDirectory containing files: {out_fol}\n\n')
-        return {'output_folder':out_fol,'files_list':files,'downloaded':downloaded,'failed':failed,'total':self.playlist_count,'size_downloaded':hbs(downloaded_bytes)}
+                    self.failed+=1
+        print(f'Downloaded {self.downloaded} videos of {self.playlist_count}.\nDirectory containing files: {out_fol}\n\n')
+        return {'output_folder':out_fol,'files_list':self.downloaded_files,'downloaded': self.downloaded,'failed': self.failed,'total':self.playlist_count,'size_downloaded':hbs(self.downloaded_bytes)}
 
 
 
