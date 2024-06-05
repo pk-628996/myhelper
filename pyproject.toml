@@ -29,7 +29,7 @@ classifiers = [
 ]
 keywords = ["myhelper", "yt-dlp helper", "mypackage"]
 dependencies = [
-    "aiohttp",
+    "aiohttp[speedups]",
     "yt-dlp"
 ]
 

@@ -22,6 +22,8 @@ audio=yt.download_audio_by_bt_rate("128k")
 yt_=Ytlist("Your Playlist Url")
 lst=yt_.download_all_videos_by_resolution('720p',out_fol="Out_Folder",alt="360p")
 
+#lst: dict containing outputs
+
 lst["output_folder"]
 lst["files_list"]
 lst["size_downloaded"]
@@ -46,6 +48,9 @@ pdftk().decrypt('file1.pdf',input_pw='yourpass',output='pk.pdf')
 
 # ** To encrypt Pdf:**
 pdftk().encrypt('file1.pdf',user_pw='pass',owner_pw='pass1',output='output.pdf')
+
+# ** To add background:**
+pdftk().add_background(pdf, background_pdf)
 
 ```
 ---

@@ -285,7 +285,6 @@ class Ytube:
             'noplaylist':True,
             'format':format_to_download,
             'outtmpl':f'%(title)s_%(id)s.%(ext)s',
-            
             'writesubtitles':True,
             'writeautomaticsub':True,
             'restrictfilenames': True,

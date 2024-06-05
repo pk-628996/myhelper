@@ -13,6 +13,7 @@ import re
 import random
 import string
 import asyncio
+import time
 
 def generate_random_string(length=10):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
@@ -46,3 +47,12 @@ async def do_it_async(func,*args,**kwargs):
       loop = asyncio.get_event_loop()
     # Run the synchronous function in a separate thread
     return await loop.run_in_executor(None,func,*args,**kwargs)
+
+
+async def progress(current,total,start,**kwargs):
+    now=time.time()
+    diff=now-start
+    percent = current / total * 100 
+    if dif > 0:
+        speed = current / diff 
+    
