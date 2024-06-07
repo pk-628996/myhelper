@@ -30,7 +30,8 @@ classifiers = [
 keywords = ["myhelper", "yt-dlp helper", "mypackage"]
 dependencies = [
     "aiohttp[speedups]",
-    "yt-dlp"
+    "yt-dlp",
+    "beautifulsoup4"
 ]
 
 [project.optional-dependencies]
