@@ -48,11 +48,12 @@ async def do_it_async(func,*args,**kwargs):
     # Run the synchronous function in a separate thread
     return await loop.run_in_executor(None,func,*args,**kwargs)
 
-
+"""
 async def progress(current,total,start,**kwargs):
     now=time.time()
     diff=now-start
     percent = current / total * 100 
     if dif > 0:
         speed = current / diff 
-    
+        time_to_completion = 
+    """
