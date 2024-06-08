@@ -7,4 +7,4 @@ def shorturl_at(url):
         soup=BeautifulSoup(response.text,"html.parser")
         return soup.find(id="shortenurl")["value"]
     else:
-       print('An Unknown error occured')
+       raise Exception('An Unknown error occured')

@@ -14,9 +14,17 @@ import random
 import string
 import asyncio
 import time
+import math
+import os 
 
 def generate_random_string(length=10):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+def hhmmss(secs):
+    hh, secs = divmod(secs, 3600)
+    mm, ss = divmod(secs, 60)
+    return f'{hh}:{mm:02}:{ss:02}'
+
 
 
 def hbs(bytes_num):
@@ -48,12 +56,20 @@ async def do_it_async(func,*args,**kwargs):
     # Run the synchronous function in a separate thread
     return await loop.run_in_executor(None,func,*args,**kwargs)
 
-"""
-async def progress(current,total,start,**kwargs):
+
+def progress(current,total,start,**kwargs):
     now=time.time()
     diff=now-start
     percent = current / total * 100 
-    if dif > 0:
+    if diff > 0:
         speed = current / diff 
-        time_to_completion = 
-    """
+        time_to_completion = (total - current) / speed
+        bead_downloaded = "⬢"
+        bead_not_downloaded = "⬡"
+        cols=22
+        ond=100/(cols-2)
+        progress_bar="[{}{}]".format(
+            "".join([bead_downloaded for i in range(math.floor(percent/ond))]),
+            "".join([bead_not_downloaded for i in range((cols-2) - math.floor(percent/ond))])
+            )
+        print(f"Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
