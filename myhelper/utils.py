@@ -57,7 +57,7 @@ async def do_it_async(func,*args,**kwargs):
     return await loop.run_in_executor(None,func,*args,**kwargs)
 
 
-def progress(current,total,start,**kwargs):
+def progress(current,total,start,file=None): 
     now=time.time()
     diff=now-start
     percent = current / total * 100 
@@ -72,4 +72,7 @@ def progress(current,total,start,**kwargs):
             "".join([bead_downloaded for i in range(math.floor(percent/ond))]),
             "".join([bead_not_downloaded for i in range((cols-2) - math.floor(percent/ond))])
             )
-        print(f"Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
+        if file:
+            print(f"Downloading {file}\nProgress: Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
+        else:
+            print(f"Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
