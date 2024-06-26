@@ -76,3 +76,5 @@ def progress(current,total,start,file=None):
             print(f"Downloading {file}\nProgress: Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
         else:
             print(f"Downloaded {hbs(current)} of {hbs(total)} at {hbs(speed)}/s\nElapsed: {diff:.2f}s {percent:.2f}% {progress_bar}\nTime remaining: {time_to_completion:.2f}s")
+
+
